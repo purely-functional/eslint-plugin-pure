@@ -58,6 +58,13 @@ ruleTester.run('pure', rule, {
       errors: [
         { message: 'Sequence expressions are considered impure code.' }
       ]
+    },
+    {
+      parser: 'babel-eslint',
+      code: 'const value = window.MyValue = 99',
+      errors: [
+        { message: 'Assignments are considered impure.' }
+      ]
     }
   ]
 })
