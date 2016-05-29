@@ -1,0 +1,28 @@
+{
+  "name": "eslint-plugin-pure",
+  "version": "0.0.0",
+  "description": "Enforce rules to make your code purely functional.",
+  "keywords": [
+    "eslint",
+    "eslintplugin",
+    "eslint-plugin"
+  ],
+  "author": "Thai Pangsakulyanont",
+  "main": "lib/index.js",
+  "scripts": {
+    "test": "mocha tests --recursive"
+  },
+  "dependencies": {
+    "requireindex": "~1.1.0"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.0.4",
+    "eslint": "~2.6.0",
+    "mocha": "^2.5.3",
+    "standard": "^7.1.1"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "ISC"
+}
