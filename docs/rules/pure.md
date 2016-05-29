@@ -32,6 +32,10 @@ alert('Hello world!')   // <-- Return value discarded.
 
 const x = (f(), g())    // <-- Result of `f()` discarded.
                         //     It must be there for side-effects!
+
+const a = window.a = 1  // <-- AssignmentExpressions are impure.
+
+const id = nextId++     // <-- UpdateExpressions are impure.
 ```
 
 The following patterns are not warnings:

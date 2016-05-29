@@ -49,14 +49,14 @@ ruleTester.run('pure', rule, {
       parser: 'babel-eslint',
       code: 'f()',
       errors: [
-        { message: 'Discarding expression result is considered as impure code.' }
+        { message: 'Discarding expression result is considered impure.' }
       ]
     },
     {
       parser: 'babel-eslint',
       code: 'const value = (a, b)',
       errors: [
-        { message: 'Sequence expressions are considered impure code.' }
+        { message: 'Sequence expressions are considered impure.' }
       ]
     },
     {
@@ -64,6 +64,13 @@ ruleTester.run('pure', rule, {
       code: 'const value = window.MyValue = 99',
       errors: [
         { message: 'Assignments are considered impure.' }
+      ]
+    },
+    {
+      parser: 'babel-eslint',
+      code: 'const id = nextId++',
+      errors: [
+        { message: 'Update expressions are considered impure.' }
       ]
     }
   ]
