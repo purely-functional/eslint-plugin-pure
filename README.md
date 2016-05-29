@@ -29,7 +29,6 @@ Add `pure` to the plugins section of your `.eslintrc` configuration file. You ca
 ```yaml
 plugins:
   - pure
-  - immutable
 ```
 
 
@@ -38,12 +37,18 @@ Then create an `.eslintrc` in places where you want your code to be pure:
 ```yaml
 rules:
   pure/pure: 2
-  immutable/no-let: 2
-  immutable/no-mutation: 2
+```
+
+You should also use these rules. These rules are useful outside of pure code but when used in conjunction with this plugin yields a powerful effect:
+
+```yaml
   no-var: 2
+  prefer-const: 2
   no-undef: 2
   no-unused-vars: 2
 ```
+
+Also look into [eslint-plugin-immutable](https://github.com/jhusain/eslint-plugin-immutable) for even more enforcement (such as disallowing `this`).
 
 
 ## Supported Rules
