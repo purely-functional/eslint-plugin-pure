@@ -7,13 +7,13 @@ __Note:__ Your code must be using ES6 modules, because `module.exports =` is con
 
 ## What are disallowed?
 
-- __ExpressionStatements__ are disallowed. ExpressionStatements are statements where its result is not used (i.e. not stored in a variable, thrown, or returned). This signifys that some side-effect is taking place.
+- __ExpressionStatements__ are disallowed. ExpressionStatements are statements whose result is not used (i.e. not stored in a variable, thrown, or returned). This signifys that some side-effect is taking place.
 
   ```js
   array.push(1)
   ```
 
-  Binding to a variable is allowed, e.g.
+  Binding to a variable is allowed, though, e.g.
   
   ```js
   export function getArrayLength (array) {
@@ -21,6 +21,8 @@ __Note:__ Your code must be using ES6 modules, because `module.exports =` is con
     return arrayLength
   }
   ```
+
+  To prevent cheating by just binding side-effect to an unused variable, use `no-unused-vars` rule.
 
 - __AssignmentExpressions__ are disallowed for obvious reasons.
 
